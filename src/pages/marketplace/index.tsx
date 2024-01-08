@@ -4,7 +4,7 @@ const Marketplace = () => {
   const products = [
     {
       path: '/Marketplace/shirt 1.png',
-      price: '1500',  
+      price: '1500',
       titile: 'Kith for Mickey & Friends Suede Jacket',
       type: 'Disney',
       subtype: 'Black',
@@ -60,35 +60,39 @@ const Marketplace = () => {
     },
   ];
   return (
-    <div className='px-[40px]'>
-      <Header logo={'/Header/logo.png'} />
-      <div className='pb-2'>
-        <h1 className='text-white font-[600] text-[26px]'>Marketplace</h1>
-        <p className='text-white font-[400] text-[18px]'>
-          Introducing Treats Hanukkah, a festive collection featuring apparel, custom dreidels, and a custom Hanukkah
-          Plate Set
-        </p>
+    <>
+      <div className='px-6'>
+        <Header logo={'/Header/logo.png'} />
       </div>
-      <div className='py-4 flex flex-wrap justify-center gap-14'>
-        {products.map((item, index) => {
-          return (
-            <div className='flex flex-col gap-2' key={index}> 
-              <div className='relative'>
-                <Image src={item.path} width={317} height={341} alt='' />
-                <div className='flex bg-[#BC0017] text-white text-[14px] rounded-[8px] px-4 py-2 absolute top-4 right-4'>
-                  <span className='text-[#FFFFFFCC] font-[400]'>Price</span> :
-                  <span className='font-[600] pl-2'>${item.price}</span>
+      <div className='px-[40px]'>
+        <div className='pb-2'>
+          <h1 className='text-white font-[600] text-[26px]'>Marketplace</h1>
+          <p className='text-white font-[400] text-[18px]'>
+            Introducing Treats Hanukkah, a festive collection featuring apparel, custom dreidels, and a custom Hanukkah
+            Plate Set
+          </p>
+        </div>
+        <div className='py-4 flex flex-wrap justify-center gap-14'>
+          {products.map((item, index) => {
+            return (
+              <div className='flex flex-col gap-2' key={index}>
+                <div className='relative'>
+                  <Image src={item.path} width={317} height={341} alt='' />
+                  <div className='flex bg-[#BC0017] text-white text-[14px] rounded-[8px] px-4 py-2 absolute top-4 right-4'>
+                    <span className='text-[#FFFFFFCC] font-[400]'>Price</span> :
+                    <span className='font-[600] pl-2'>${item.price}</span>
+                  </div>
+                </div>
+                <p className='text-white'>{item.titile}</p>
+                <div className='text-white'>
+                  <span>{item.type}</span> | <span className='text-[#FFFFFFCC]'>{item.subtype}</span>
                 </div>
               </div>
-              <p className='text-white'>{item.titile}</p>
-              <div className='text-white'>
-                <span>{item.type}</span> | <span className='text-[#FFFFFFCC]'>{item.subtype}</span>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

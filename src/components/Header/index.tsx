@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import Avatar from "../Avatar/index"
 import Image from 'next/image';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 const Header = ({logo, handleDrawerToggle, title}:any) => {
   return (
-    <div className='flex flex-wrap flex-col-reverse lg:flex-row gap-y-3 lg:gap-y-0 lg:items-center pt-[40px] pb-6 px-4'>
+    <div className={`flex flex-wrap lg:flex-row gap-y-3 lg:gap-y-0 lg:items-center pt-[40px] pb-6 px-4 ${logo ? 'flex-col' : 'flex-col-reverse'}`}>
       {logo ? 
        <Image src={logo} height={35} width={187} alt='' /> :
       <p className='text-[30px] font-[500]'>{title}</p>}
@@ -26,7 +27,7 @@ const Header = ({logo, handleDrawerToggle, title}:any) => {
         </div>
         <div className="flex justify-between gap-4">
         <Avatar />
-        <IconButton
+        {!logo && <IconButton
             color='inherit'
             aria-label='open drawer'
             edge='start'
@@ -34,7 +35,7 @@ const Header = ({logo, handleDrawerToggle, title}:any) => {
             sx={{ display: { md: 'none' }, color: 'white' }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton>}
         </div>
       </div>
       
