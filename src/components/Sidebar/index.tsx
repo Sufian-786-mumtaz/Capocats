@@ -94,9 +94,8 @@ export default function ResponsiveDrawer(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            '& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper':{backgroundColor:'#3B3B3B', color:'white'},
             display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor:'#3B3B3B', color:'white' },
           }}
         >
           {drawer}
@@ -104,10 +103,9 @@ export default function ResponsiveDrawer(props: Props) {
         <Drawer
           variant='permanent'
           sx={{
-            '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper':{backgroundColor:'#3B3B3B', color:'white'},
             color:'white',
             display: { xs: 'none', md: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor:'#3B3B3B', color:'white' },
           }}
           open
         >
