@@ -27,9 +27,6 @@ body {
   background: linear-gradient(117.43deg, #d60d5d 11.73%, #160109 103.86%),
     linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
 }
-.css-1aquho2-MuiTabs-indicator {
-  position: unset !important;
-}
 .slick-track {
   display: flex !important;
   gap: 30px !important;

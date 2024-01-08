@@ -54,6 +54,9 @@ export default function BasicTabs() {
           variant='scrollable'
           scrollButtons='auto'
           allowScrollButtonsMobile
+          TabIndicatorProps={{
+            style: { display: 'none' }
+          }}
           sx={{
             '.MuiTabs-scrollButtons': {
               color: 'white',
