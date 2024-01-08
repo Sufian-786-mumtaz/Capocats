@@ -17,28 +17,23 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #1F1F1F
+  background: #1f1f1f;
 }
 /* .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
   background-color: #3B3B3B !important;
 } */
-.css-1rzvzrk-MuiPaper-root-MuiAppBar-root{
-  background-color: transparent;
-  box-shadow: none !important;
+.bg-gradient {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
 }
-.css-1aquho2-MuiTabs-indicator{
+.bg-gradient-1 {
+  background: linear-gradient(117.43deg, #d60d5d 11.73%, #160109 103.86%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+}
+.css-1aquho2-MuiTabs-indicator {
   position: unset !important;
 }
 .slick-track {
   display: flex !important;
-}
-
-.slick-slider {
-  height: 239px;
-}
-.slick-slide {
-  margin-left: 30px;
-}
-.slick-list {
-  margin-right: -30px;
+  gap: 30px !important;
 }

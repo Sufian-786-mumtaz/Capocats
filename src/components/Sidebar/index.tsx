@@ -71,8 +71,8 @@ export default function ResponsiveDrawer(props: Props) {
       <CssBaseline />
       <AppBar
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
           position: 'relative',
           background: 'transparent',
           boxShadow: 'none',
@@ -84,7 +84,7 @@ export default function ResponsiveDrawer(props: Props) {
           </div>
         </Toolbar>
       </AppBar>
-      <Box component='nav' sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }} aria-label='mailbox folders'>
+      <Box component='nav' sx={{ width: { md: drawerWidth }, flexShrink: { sm: 0 } }} aria-label='mailbox folders'>
         <Drawer
           container={container}
           variant='temporary'
@@ -95,7 +95,7 @@ export default function ResponsiveDrawer(props: Props) {
           }}
           sx={{
             '& .css-4t3x6l-MuiPaper-root-MuiDrawer-paper':{backgroundColor:'#3B3B3B', color:'white'},
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
@@ -106,7 +106,7 @@ export default function ResponsiveDrawer(props: Props) {
           sx={{
             '& .css-12i7wg6-MuiPaper-root-MuiDrawer-paper':{backgroundColor:'#3B3B3B', color:'white'},
             color:'white',
-            display: { xs: 'none', sm: 'block' },
+            display: { xs: 'none', md: 'block' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
           open
@@ -114,7 +114,7 @@ export default function ResponsiveDrawer(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component='main' sx={{ flexGrow: 1, width: { sm: '100%' }, paddingLeft: { sm: '250px' } }}>
+      <Box component='main' sx={{ flexGrow: 1, width: { md: '100%' }, paddingLeft: { md: '250px' } }}>
         <div className='px-[40px] pb-[40px]'>{children}</div>
       </Box>
     </Box>

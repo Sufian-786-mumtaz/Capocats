@@ -8,7 +8,7 @@ Image;
 function NextArrow(props: any) {
   const { onClick } = props;
   return (
-    <div className='absolute top-1/2 transform right-[-20px] -translate-y-1/2 z-50'>
+    <div className='absolute top-1/2 transform translate-y-[-50%] right-[-20px] z-50'>
       <div
         onClick={onClick}
         className='w-[46px] h-[46px] bg-[#3B3B3B] rounded-full border border-[#FFFFFF80] flex justify-center items-center cursor-pointer'
@@ -21,7 +21,7 @@ function NextArrow(props: any) {
 function PrevArrow(props: any) {
   const { onClick } = props;
   return (
-    <div className='absolute top-1/2 left-[-20px] transform -translate-y-1/2 z-50'>
+    <div className='absolute top-1/2 transform translate-y-[-50%] left-[-20px] z-50'>
       <div
         onClick={onClick}
         className='w-[46px] h-[46px] bg-[#3B3B3B] rounded-full border border-[#FFFFFF80] flex justify-center items-center cursor-pointer'
@@ -33,8 +33,6 @@ function PrevArrow(props: any) {
 }
 const Carousel = () => {
   const [sliderSettings] = useState({
-    adaptiveHeight:false,
-    className: 'slider',
     variableWidth: true,
     dots: false,
     infinite: true,
@@ -42,17 +40,16 @@ const Carousel = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
-    cssEase: 'linear',
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1160,
+        breakpoint: 1260,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -61,15 +58,7 @@ const Carousel = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 825,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 2,
+          dots: false,
         },
       },
       {
@@ -77,6 +66,8 @@ const Carousel = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
+          dots: false,
         },
       },
     ],

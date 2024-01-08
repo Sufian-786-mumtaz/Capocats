@@ -24,16 +24,18 @@ const Header = ({logo, handleDrawerToggle, title}:any) => {
             <Image src='/Header/mic.png' height={22} width={13} alt='' className='cursor-pointer' />
           </div>
         </div>
+        <div className="flex justify-between gap-4">
         <Avatar />
         <IconButton
             color='inherit'
             aria-label='open drawer'
             edge='start'
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' }, color: 'white' }}
+            sx={{ display: { md: 'none' }, color: 'white' }}
           >
             <MenuIcon />
           </IconButton>
+        </div>
       </div>
       
     </div>

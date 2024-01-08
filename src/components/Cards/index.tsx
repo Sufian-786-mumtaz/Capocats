@@ -15,7 +15,7 @@ const Cards = () => {
             <div className='relative h-[134px] w-full max-w-[206px]'>
               <Image src={item.path} width={206} height={134} alt='' />
               <div className='absolute inset-0 flex items-center justify-center'>
-                <div className='w-[41px] h-[41px] rounded-full flex justify-center items-center border border-[#FFFFFF4D] cursor-pointer bg-gradient-to-b from-pink-600 to-black via-opacity-30'>
+                <div className='w-[41px] h-[41px] rounded-full flex justify-center items-center border border-[#FFFFFF4D] cursor-pointer bg-gradient-1'>
                   <Image src='/Cards/play.png' width={13} height={10} alt='' />
                 </div>
               </div>
