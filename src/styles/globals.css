@@ -18,10 +18,18 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #1f1f1f !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
-/* .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-  background-color: #3B3B3B !important;
-} */
+h1{
+  font-family: 'Aclonica', sans-serif !important
+}
+.bg-landing{
+  background-image: url('/Landing/bg-landing.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 .bg-gradient {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
     linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));

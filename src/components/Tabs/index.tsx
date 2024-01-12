@@ -20,11 +20,7 @@ function CustomTabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ pt: 5,}}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ pt: 5 }}>{children}</Box>}
     </div>
   );
 }
@@ -54,7 +50,7 @@ export default function BasicTabs() {
           scrollButtons='auto'
           allowScrollButtonsMobile
           TabIndicatorProps={{
-            style: { display: 'none' }
+            style: { display: 'none' },
           }}
           sx={{
             '.MuiTabs-scrollButtons': {
@@ -65,6 +61,7 @@ export default function BasicTabs() {
           {['For You', 'Popular', 'Podcasts', 'Rap', 'EDM', 'Rook', 'More'].map((item, index) => {
             return (
               <Tab
+                key={index}
                 label={item}
                 {...a11yProps(index)}
                 style={{
@@ -81,7 +78,7 @@ export default function BasicTabs() {
       </Box>
       {['For You', 'Popular', 'Podcasts', 'Rap', 'EDM', 'Rook', 'More'].map((item, index) => {
         return (
-          <CustomTabPanel value={value} index={index}>
+          <CustomTabPanel value={value} index={index} key={index}>
             <Carousel />
           </CustomTabPanel>
         );
