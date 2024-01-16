@@ -5,7 +5,7 @@ const JoinFanClub = () => {
   return (
     <Layout >
         <MemberBox heading="Join our exclusive Fan Club today!" paragraph="Unlock a world of backstage access, exclusive content, and VIP experiences with your favorite artist!" />
-        <ContorlButtons skipPath='/' nextPath='/onboarding/fan-club' disable={false} purchaseBtn={true} />
+        <ContorlButtons skipPath='/' nextPath='/onboarding/social-tokens' disable={false} purchaseBtn={true} />
     </Layout>
   )
 }
