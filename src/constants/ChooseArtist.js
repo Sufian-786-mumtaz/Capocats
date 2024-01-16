@@ -1,37 +1,51 @@
 export const chooseArtistData = [
     {
+        id:1,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose1.png'
     },
     {
+        id:2,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose2.png'
     },
     {
+        id:3,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose3.png'
     },
     {
+        id:4,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose4.png'
     },
     {
+        id:5,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose5.png'
     },
     {
+        id:6,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose6.png'
     },
     {
+        id:7,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose7.png'
     },
     {
+        id:8,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose8.png'
     },
     {
+        id:9,
+        title:'Artist/Creator',
+        path:'/ChooseArtist/choose9.png'
+    },
+    {
+        id:10,
         title:'Artist/Creator',
         path:'/ChooseArtist/choose9.png'
     },
