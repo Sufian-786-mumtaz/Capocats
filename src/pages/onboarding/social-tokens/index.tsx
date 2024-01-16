@@ -11,7 +11,7 @@ const SocialTokens = () => {
         toCoin={'/Become Member/silver coin.png'}
         socialTokens={true}
       />
-      <ContorlButtons skipPath='/' nextPath='/onboarding/join-fan-club' disable={false} />
+      <ContorlButtons skipPath='/' nextPath='/onboarding/social-tokens' disable={false} />
     </Layout>
   );
 };

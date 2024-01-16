@@ -9,7 +9,7 @@ const Layout = ({children}:Props) => {
       <div className='flex flex-wrap'>
         <div className='w-screen h-screen md:flex md:flex-wrap'>
           {/* Left column container*/}
-          <div className='px-4 md:px-0 md:w-[55%] text-white'>
+          <div className='h-full px-4 md:px-0 md:w-[55%] text-white'>
             {children}
           </div>
           {/* Right column container with background and description*/}

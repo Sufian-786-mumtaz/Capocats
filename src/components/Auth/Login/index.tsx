@@ -2,7 +2,7 @@ import InputField from '@/components/InputField';
 import Layout from '../Layout';
 import SocialAuth from '../SocialAuth';
 
-const Signup = () => {
+const Login = () => {
   return (
     <Layout>
       <div className='h-full flex items-center px-[40px] md:px-[99px]'>
@@ -13,9 +13,8 @@ const Signup = () => {
           <div className='flex flex-col gap-4'>
             <InputField label='Email' placeholder='Enter email here' type='text' required={true} />
             <InputField label='Password' placeholder='Enter password' type='password' required={true} />
-            <InputField label='Confirm Password' placeholder='Enter confirm password' type='password' required={true} />
-            <button className='text-[16px] font-[600] leading-[20.8px] text-white bg-[#BC0017] rounded-[16px] p-4'>Register</button>
-            <SocialAuth title='Already have an account?' url='/auth/login' action='Login to Account' />
+            <button className='text-[16px] font-[600] leading-[20.8px] text-white bg-[#BC0017] rounded-[16px] p-4'>Login</button>
+            <SocialAuth title='Don’t have an account?' url='/auth/signup' action='Create an Account' />
           </div>
         </div>
       </div>
@@ -23,4 +22,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
