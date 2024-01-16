@@ -11,7 +11,7 @@ const Signup = () => {
             Over 300 Artist with 10 millions song to suits every mode
           </h1>
           <div className='flex flex-col gap-4'>
-            <InputField label='Email' placeholder='Enter email here' type='text' required={true} />
+            <InputField label='Email' placeholder='Enter email here' type='email' required={true} />
             <InputField label='Password' placeholder='Enter password' type='password' required={true} />
             <InputField label='Confirm Password' placeholder='Enter confirm password' type='password' required={true} />
             <button className='text-[16px] font-[600] leading-[20.8px] text-white bg-[#BC0017] rounded-[16px] p-4'>Register</button>
