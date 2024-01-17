@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Videos from '../Videos';
 import Image from 'next/image';
+import {fanclub} from "@/constants/Fanclub"
 Image;
 function NextArrow(props: any) {
   const { onClick } = props;
@@ -72,52 +73,10 @@ const Carousel = () => {
       },
     ],
   });
-  const videos = [
-    {
-      path: '/Videos/pfire.png',
-      title: 'PFire',
-    },
-    {
-      path: '/Videos/ice spice.png',
-      title: 'Ice Spice',
-    },
-    {
-      path: '/Videos/neil tran.png',
-      title: 'Neil Tran',
-    },
-    {
-      path: '/Videos/soo jin ae.png',
-      title: 'Soo Jin Ae',
-    },
-    {
-      path: '/Videos/yael amari.png',
-      title: 'Yael Amari',
-    },
-    {
-      path: '/Videos/pfire.png',
-      title: 'PFire',
-    },
-    {
-      path: '/Videos/ice spice.png',
-      title: 'Ice Spice',
-    },
-    {
-      path: '/Videos/neil tran.png',
-      title: 'Neil Tran',
-    },
-    {
-      path: '/Videos/soo jin ae.png',
-      title: 'Soo Jin Ae',
-    },
-    {
-      path: '/Videos/yael amari.png',
-      title: 'Yael Amari',
-    },
-  ];
   return (
     <div className='content'>
       <Slider {...sliderSettings}>
-        {videos.map((item, index) => (
+        {fanclub.map((item, index) => (
           <div key={index}>
             <Videos item={item} />
           </div>

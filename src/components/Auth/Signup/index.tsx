@@ -1,20 +1,29 @@
+import * as React from 'react';
 import InputField from '@/components/InputField';
 import Layout from '../Layout';
 import SocialAuth from '../SocialAuth';
-
+import Radio from '@mui/material/Radio';
+import RadioButtons from '../RadioButtons';
 const Signup = () => {
+  const [selectedValue, setSelectedValue] = React.useState('a');
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(event.target.value);
+  };
   return (
     <Layout>
-      <div className='h-full flex items-center px-[40px] md:px-[99px]'>
+      <div className='flex items-center px-[40px] py-[30px] md:py-[52px] md:px-[99px]'>
         <div className='md:max-w-[401px]'>
           <h1 className='text-white text-[24px] leading-[28.18px] font-[700] mb-6'>
             Over 300 Artist with 10 millions song to suits every mode
           </h1>
           <div className='flex flex-col gap-4'>
+            <RadioButtons />
             <InputField label='Email' placeholder='Enter email here' type='email' required={true} />
             <InputField label='Password' placeholder='Enter password' type='password' required={true} />
             <InputField label='Confirm Password' placeholder='Enter confirm password' type='password' required={true} />
-            <button className='text-[16px] font-[600] leading-[20.8px] text-white bg-[#BC0017] rounded-[16px] p-4'>Register</button>
+            <button className='text-[16px] font-[600] leading-[20.8px] text-white bg-[#BC0017] rounded-[16px] p-4'>
+              Register
+            </button>
             <SocialAuth title='Already have an account?' url='/auth/login' action='Login to Account' />
           </div>
         </div>

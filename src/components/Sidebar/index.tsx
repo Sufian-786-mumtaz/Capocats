@@ -3,13 +3,18 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Drawer from '@mui/material/Drawer';
+import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '../Header';
+import { fanclub } from '@/constants/Fanclub';
+import { useRouter } from 'next/router';
 const drawerWidth = 250;
 
 interface Props {
@@ -19,6 +24,8 @@ interface Props {
 }
 
 export default function ResponsiveDrawer(props: Props) {
+  const router = useRouter();
+  const { pathname } = router;
   const { window, children, title } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -27,42 +34,47 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const drawer = (
-    <div className='px-[30px] pt-[60px]'>
-      <Image src='/Sidebar/logo.png' height={35} width={187} alt='' />
-      <div className='flex items-center gap-[10px] mt-[30px]'>
-        <p>Menu</p>
-        <div>
-          <hr style={{ width: '88px' }} />
-        </div>
+    <div className='py-[32px]'>
+      <div className='mb-[49px] flex justify-center'>
+        <Image src='/Sidebar/logo.png' height={35} width={187} alt='' />
       </div>
       <List>
-        {['Home', 'Notification', 'Settings', 'Logout'].map((text, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
+        {[
+          { title: 'Home', icon: '/Sidebar/home.png', path: '/dashboard' },
+          { title: 'Market Place', icon: '/Sidebar/shop.png', path: '/marketplace' },
+          { title: 'Wallet', icon: '/Sidebar/wallet.png', path: '/wallet' },
+        ].map((item, index) => (
+          <ListItem
+            key={index}
+            disablePadding
+            sx={{ backgroundColor: pathname === item.path ? '#BC0017' : 'transparent' }}
+          >
+            <Link href={item.path}>
+              <ListItemButton
+                sx={{ px: '32px', py: '16px', gap: '10px', '&:hover': { backgroundColor: 'transparent' } }}
+                disableRipple
+              >
+                <ListItemIcon sx={{ minWidth: '24px', minHeight: '24px' }}>
+                  <Image src={item.icon} width={24} height={24} alt={item.title} />
+                </ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
-      <div className='flex items-center gap-[10px] mb-[30px] mt-[20px]'>
-        <Image src='/Sidebar/Qs Studio.png' height={30} width={27} alt='' />
-        <p>Qs Studio</p>
+      <Divider sx={{ borderColor: '#3A3A3A' }} />
+      <div className='flex flex-col gap-[10px] pl-[32px] py-[9.5px] mt-[3px]'>
+        <h2 className='font-[700] leading-[20.8px]'>Followed Fan Club</h2>
+        {fanclub.slice(0, 5).map((item, index) => {
+          return (
+            <Link href='#' className='py-2 flex gap-2 items-center' key={index}>
+              <Image src={item.path} width={32} height={32} alt={item.title} className='rounded-[110.4px]' />
+              <span className='text-[14px]'>{item.title}</span>
+            </Link>
+          );
+        })}
       </div>
-      <div className='flex items-center gap-[10px]'>
-        <p>My Playlist</p>
-        <div>
-          <hr style={{ width: '88px' }} />
-        </div>
-      </div>
-      <List>
-        {['Playlist #A', 'Playlist #B', 'Playlist #C', 'Add New +'].map((text, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -95,7 +107,12 @@ export default function ResponsiveDrawer(props: Props) {
           }}
           sx={{
             display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth,backgroundColor:'#3B3B3B', color:'white' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              backgroundColor: '#3B3B3B',
+              color: 'white',
+            },
           }}
         >
           {drawer}
@@ -103,9 +120,14 @@ export default function ResponsiveDrawer(props: Props) {
         <Drawer
           variant='permanent'
           sx={{
-            color:'white',
+            color: 'white',
             display: { xs: 'none', md: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor:'#3B3B3B', color:'white' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              backgroundColor: '#252525',
+              color: 'white',
+            },
           }}
           open
         >

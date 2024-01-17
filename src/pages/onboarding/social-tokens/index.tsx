@@ -3,7 +3,7 @@ import MemberBox from '@/components/Onboarding/MemberBox';
 import ContorlButtons from "@/components/Onboarding/ControlButtons"
 const SocialTokens = () => {
   return (
-    <Layout>
+    <Layout skip={true} next='/dashboard' previous='/onboarding/fan-club'>
       <MemberBox
         heading='Exchange Tokens'
         paragraph='In exchange of Social Tokens you’ll participate in decisions making or swap for Artist tokens and buy merch       '
@@ -11,7 +11,6 @@ const SocialTokens = () => {
         toCoin={'/Become Member/silver coin.png'}
         socialTokens={true}
       />
-      <ContorlButtons skipPath='/' nextPath='/onboarding/social-tokens' disable={false} />
     </Layout>
   );
 };

@@ -1,6 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 5px;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BC0017;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -20,17 +41,17 @@ body {
   background: #1f1f1f !important;
   font-family: 'Montserrat', sans-serif !important;
 }
-h1{
-  font-family: 'Aclonica', sans-serif !important
+h1 {
+  font-family: 'Aclonica', sans-serif !important;
 }
-.bg-landing{
+.bg-landing {
   background-image: url('/Landing/bg-landing.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
-.bg-auth-poster{
+.bg-auth-poster {
   background-image: url('/Auth/poster.png');
   background-position: center bottom;
   background-repeat: no-repeat;
